@@ -1,0 +1,25 @@
+## setting a matrix 'x' and getting its inverse
+
+##  set a matrix  'x' and get it
+
+makeCacheMatrix <- function(x = matrix()) {
+  inv <- NULL
+  set <- function(y) {
+    x <<- y
+    inv <<- NULL
+  }
+  
+  get<- function() x 
+  setInverse <- function() inv <<- solve(x) ## get the inverse of the matrix 'x'
+  getInverse <- function() inv
+  list(set = set,
+       get = get,
+       setInverse = setInverse,
+       getInverse = getInverse)
+}
+
+funt <- makeCacheMatrix()
+funt$set(matrix())
+funt$get()
+funt$setInverse()
+funt$getInverse()
